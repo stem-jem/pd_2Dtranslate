@@ -31,12 +31,8 @@ def pd_2Dtranslate(list_of_stuff,size=8):
     rows=[] #Rows of data
     row_pos=0 #Current position inside row
     for i in list_of_stuff:
-        #If the end of the input list is reached:
-        if row_pos==len(list_of_stuff):
-            rows.append(i)
-            cols_by_rows.append(rows)        
         #If the size of the row is reached:
-        elif row_pos>=size:
+        if row_pos>=size:
             cols_by_rows.append(rows)
             rows=[i]
             row_pos=1
@@ -44,4 +40,7 @@ def pd_2Dtranslate(list_of_stuff,size=8):
         else:
             rows.append(i)
             row_pos+=1
+            #If the end of the input list is reached:
+            if row_pos==len(list_of_stuff):
+                cols_by_rows.append(rows)
     return np.array(cols_by_rows)
