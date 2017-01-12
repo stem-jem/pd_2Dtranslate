@@ -44,5 +44,4 @@ def pd_2Dtranslate(list_of_stuff,size=8):
         else:
             rows.append(i)
             row_pos+=1
-        print(i)
     return np.array(cols_by_rows)
