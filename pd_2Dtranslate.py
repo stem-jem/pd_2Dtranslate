@@ -7,14 +7,17 @@ Created on Thu Jan 12 09:27:05 2017
 
 def pd_2Dtranslate(list_of_stuff,size=8):
     """
-    Translates Pandas 1D slice into Np 2D array using basic list generation
+    Translates 1D list into Np 2D array using basic list generation. This is similar/combined functionality
+    of numpy.reshape or numpy.asarray.
     
     Parameters
     -----
     input_list: list
         List of items to be translated into Np array
-    level: int, optional
-        Size of each level of 2D array. Default = 8 due to well plate row number
+    size: int, optional
+        Size of each level of 2D array (ie lenght of each row). Default = 8 due to well plate row number.
+        By specifying the size and knowing the number of points in the list, the length of each column is 
+        implied.
     
     Output
     -----
